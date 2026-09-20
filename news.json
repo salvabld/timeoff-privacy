@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "welcome-2026-09",
+      "date": "2026-09-20",
+      "popup": true,
+      "title": {
+        "fr": "Merci d'avoir installé TimeOff !",
+        "nl": "Bedankt voor het installeren van TimeOff!",
+        "en": "Thank you for installing TimeOff!"
+      },
+      "body": {
+        "fr": "L'équipe Salvo vous remercie de votre confiance. TimeOff est gratuit, sans publicité et respecte votre vie privée : vos données restent sur votre téléphone. Une question ? Le guide se trouve dans l'onglet Aide. Bonnes vacances !",
+        "nl": "Het Salvo-team bedankt u voor uw vertrouwen. TimeOff is gratis, zonder reclame en respecteert uw privacy: uw gegevens blijven op uw telefoon. Een vraag? De gids vindt u in het tabblad Hulp. Fijne vakantie!",
+        "en": "The Salvo team thanks you for your trust. TimeOff is free, ad-free and respects your privacy: your data stays on your phone. Got a question? The guide is in the Help tab. Enjoy your time off!"
+      },
+      "link": "https://salvabld.github.io/timeoff-privacy/guide/",
+      "linkLabel": {
+        "fr": "Ouvrir le guide",
+        "nl": "Gids openen",
+        "en": "Open the guide"
+      }
+    }
+  ]
+}
