@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TimeOff — Présentation · Voorstelling · Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --sun:#ffb347; --sea:#2bb3a3; --coral:#ff7a6b; --ink:#3a3330; --cream:#fff8ec; --paper:#fffdf8; --tape:#ffe28a; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:"Nunito", -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color:var(--ink); background:var(--cream); line-height:1.65; }
+  h1,h2 { font-family:"Baloo 2", "Nunito", sans-serif; }
+
+  .sky { background: radial-gradient(circle at 20% 20%, #fff2cf, var(--cream) 55%); padding: 46px 18px 30px; text-align:center; position:relative; overflow:hidden; }
+  .sky h1 { font-size: 2.6rem; margin: 6px 0 4px; color:var(--ink); }
+  .sky .tag { font-size:1.15rem; color:#6b5f57; margin:0 0 20px; }
+  .wave { display:block; width:100%; height:36px; }
+  .wave path { fill: var(--paper); }
+
+  .langs { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-bottom: 4px; }
+  .langs button { border:3px solid var(--ink); background:var(--paper); color:var(--ink); padding:7px 18px; border-radius:999px; font-family:"Baloo 2"; font-size:1rem; cursor:pointer; box-shadow: 3px 3px 0 var(--ink); transition: transform .1s; }
+  .langs button.on { background:var(--sun); }
+  .langs button:active { transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--ink); }
+
+  main { max-width: 720px; margin: 0 auto; padding: 0 18px 20px; background:var(--paper); }
+
+  .gallery { display:flex; gap:22px; overflow-x:auto; padding: 30px 14px 34px; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch; }
+  .polaroid { flex:none; background:#fff; padding: 10px 10px 22px; border-radius:6px; box-shadow: 0 8px 18px rgba(58,51,48,.18); scroll-snap-align:start; }
+  .polaroid img { height: 340px; width:auto; display:block; border-radius:2px; }
+  .polaroid:nth-child(odd) { transform: rotate(-3deg); }
+  .polaroid:nth-child(even) { transform: rotate(2.5deg); }
+  @media (max-width:480px) { .polaroid img { height: 280px; } }
+
+  .chat { background: var(--paper); border:3px dashed #e4d4bd; border-radius: 22px; padding: 20px 22px; margin: 0 0 22px; }
+  .chat h2 { margin:0 0 8px; font-size:1.35rem; }
+  .chat p { margin:0; }
+
+  .stack { display:flex; flex-direction:column; gap:18px; margin: 6px 0 26px; }
+  .row { display:flex; gap:16px; align-items:flex-start; }
+  .row .emoji { font-size:2.1rem; line-height:1; flex:none; }
+  .row h2 { margin:0 0 4px; font-size:1.15rem; }
+  .row p { margin:0; color:#5a4f47; }
+
+  .stickers { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin: 4px 0 30px; }
+  .sticker { background:var(--sun); border:3px solid var(--ink); border-radius:999px; padding:8px 16px; font-weight:700; font-family:"Baloo 2"; font-size:.9rem; box-shadow: 3px 3px 0 var(--ink); }
+  .sticker.alt1 { background:var(--sea); color:#fff; }
+  .sticker.alt2 { background:var(--coral); color:#fff; }
+
+  .privacy-box { background: #eef8f5; border-radius: 22px; padding: 22px; margin: 10px 0 26px; border: 3px solid var(--sea); }
+  .privacy-box h2 { margin:0 0 8px; }
+
+  .creator { background: #fff3e0; border-radius: 22px; padding: 22px; margin: 0 0 26px; position:relative; }
+  .creator:before { content:"💌"; font-size:1.8rem; position:absolute; top:-16px; left:20px; background:var(--paper); padding: 0 6px; }
+  .creator h2 { margin: 6px 0 8px; }
+  .creator p { margin:0; }
+  .creator small { display:block; margin-top:10px; color:#8a7c70; }
+
+  .beta-box { background: var(--coral); color:#fff; border-radius: 22px; padding: 20px 22px; margin: 0 0 22px; }
+  .beta-box h2 { margin:0 0 8px; color:#fff; }
+  .beta-box p { margin:0 0 8px; }
+  .beta-box ol { margin:8px 0 0; padding-left: 1.2rem; }
+  .beta-box li { margin-bottom:6px; }
+  .beta-box a { color:#fff; text-decoration:underline; font-weight:700; }
+
+  .cta { text-align:center; margin: 10px 0 20px; }
+  .cta a { display:inline-block; background: var(--sea); color:#fff; text-decoration:none; padding:13px 26px; border-radius:999px; font-weight:700; font-family:"Baloo 2"; margin: 5px; border:3px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+  .cta a.secondary { background: var(--paper); color:var(--ink); }
+
+  footer { text-align:center; color:#8a7c70; padding: 8px 16px 46px; font-size:.95rem; background:var(--paper); }
+  a { color: var(--coral); }
+
+  [data-l] { display:none; }
+  [data-l].on { display:block; }
+  span[data-l].on { display:inline; }
+</style>
+</head>
+<body>
+
+<div class="sky">
+  <div class="langs">
+    <button data-btn="fr">🇫🇷 Français</button>
+    <button data-btn="nl">🇳🇱 Nederlands</button>
+    <button data-btn="en">🇬🇧 English</button>
+  </div>
+  <h1>🌴 TimeOff</h1>
+  <p class="tag" data-l="fr">Merci d'être testeur·euse ! Voici l'appli en 2 minutes</p>
+  <p class="tag" data-l="nl">Bedankt om tester te zijn! De app in 2 minuten</p>
+  <p class="tag" data-l="en">Thanks for testing! The app in 2 minutes</p>
+</div>
+<svg class="wave" viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0,20 C150,45 350,0 600,20 C850,40 1050,0 1200,20 L1200,40 L0,40 Z"></path></svg>
+
+<main>
+
+<section class="gallery" aria-label="Captures d'écran TimeOff">
+  <div class="polaroid"><img src="screenshots/01_dash.png" alt="Tableau de bord TimeOff"></div>
+  <div class="polaroid"><img src="screenshots/02_sup.png" alt="Heures supplémentaires"></div>
+  <div class="polaroid"><img src="screenshots/03_sched.png" alt="Horaires de travail"></div>
+  <div class="polaroid"><img src="screenshots/08_onb.png" alt="Choix du pays et jours fériés"></div>
+  <div class="polaroid"><img src="screenshots/04_hist.png" alt="Historique des absences"></div>
+  <div class="polaroid"><img src="screenshots/06_export.png" alt="Sauvegarde et sécurité"></div>
+</section>
+
+<!-- ===================== FRANÇAIS ===================== -->
+<div data-l="fr">
+  <section class="chat">
+    <h2>Salut, c'est TimeOff 👋</h2>
+    <p>Un carnet de congés simple comme bonjour : vous notez vos horaires une fois, et hop, vos soldes, vos jours fériés et vos heures sup se calculent tout seuls. Pas de compte à créer, pas de pub, pas de blabla.</p>
+  </section>
+
+  <div class="beta-box">
+    <h2>🎉 Vous testez la toute première version !</h2>
+    <p>Merci beaucoup, ça m'aide énormément. Voici comment ça marche :</p>
+    <ol>
+      <li>Ouvrez le lien d'inscription au test que je vous ai envoyé, et rejoignez le programme.</li>
+      <li>Installez TimeOff depuis le Play Store, comme une appli normale.</li>
+      <li>Utilisez-la pour de vrai pendant les 14 prochains jours, si possible.</li>
+      <li>Un souci, un avis, une idée ? Écrivez-moi à <a href="mailto:salva.bldn@gmail.com">salva.bldn@gmail.com</a>.</li>
+    </ol>
+  </div>
+
+  <div class="stickers">
+    <span class="sticker">Sans compte</span>
+    <span class="sticker alt1">Sans pub</span>
+    <span class="sticker alt2">Marche hors ligne</span>
+    <span class="sticker">Gratuit, promis</span>
+  </div>
+
+  <div class="stack">
+    <div class="row"><div class="emoji">🌴</div><div><h2>Tous vos compteurs, d'un coup d'œil</h2><p>Congés, RTT, maladie, récup'… autant que vous voulez, en couleur.</p></div></div>
+    <div class="row"><div class="emoji">⚡</div><div><h2>Heures sup calculées toutes seules</h2><p>Vous dites juste à quelle heure vous avez fini, TimeOff fait le calcul.</p></div></div>
+    <div class="row"><div class="emoji">🎉</div><div><h2>Jours fériés, on s'en occupe</h2><p>France, Belgique, Pays-Bas : calculés tout seuls, jamais décomptés.</p></div></div>
+    <div class="row"><div class="emoji">📝</div><div><h2>Chaque absence bien rangée</h2><p>Historique clair, photo justificative si besoin, tout modifiable.</p></div></div>
+    <div class="row"><div class="emoji">💾</div><div><h2>Nouveau téléphone ? Zéro stress</h2><p>Un fichier, toutes vos données. On exporte, on réimporte, c'est réglé.</p></div></div>
+  </div>
+
+  <div class="privacy-box">
+    <h2>🔒 Vos données, chez vous, un point c'est tout</h2>
+    <p>Aucun compte, aucune pub, aucun traqueur. Tout reste sur votre téléphone, ça marche même sans Internet.<br><a href="index_privacy_link">La politique de confidentialité, en clair</a></p>
+  </div>
+
+  <div class="creator">
+    <h2>Le mot de Salvo</h2>
+    <p>Salut, moi c'est Salvo ☀️ J'ai créé cette petite application pour suivre mes propres congés sans me prendre la tête, et je me suis dit : pourquoi ne pas en faire profiter les autres ? Bonnes vacances !</p>
+    <small>TimeOff est un outil perso : il ne remplace ni les règles de votre employeur, ni votre convention collective.</small>
+  </div>
+
+  <div class="cta">
+    <a href="index_guide_link">📖 Le petit guide</a>
+    <a class="secondary" href="index_privacy_link">🔒 Confidentialité</a>
+  </div>
+</div>
+
+<!-- ===================== NEDERLANDS ===================== -->
+<div data-l="nl">
+  <section class="chat">
+    <h2>Hallo, hier is TimeOff 👋</h2>
+    <p>Een verlofboekje zo simpel als goedendag: geef één keer uw werkuren op, en klaar — uw saldo's, feestdagen en overuren berekenen zichzelf. Geen account, geen reclame, geen poeha.</p>
+  </section>
+
+  <div class="beta-box">
+    <h2>🎉 U test de allereerste versie!</h2>
+    <p>Heel erg bedankt, dit helpt me enorm. Zo werkt het:</p>
+    <ol>
+      <li>Open de testlink die ik u heb gestuurd en sluit u aan bij het testprogramma.</li>
+      <li>Installeer TimeOff via de Play Store, zoals een gewone app.</li>
+      <li>Gebruik ze de komende 14 dagen echt, als het kan.</li>
+      <li>Een probleem, mening of idee? Mail me op <a href="mailto:salva.bldn@gmail.com">salva.bldn@gmail.com</a>.</li>
+    </ol>
+  </div>
+
+  <div class="stickers">
+    <span class="sticker">Geen account</span>
+    <span class="sticker alt1">Geen reclame</span>
+    <span class="sticker alt2">Werkt offline</span>
+    <span class="sticker">Écht gratis</span>
+  </div>
+
+  <div class="stack">
+    <div class="row"><div class="emoji">🌴</div><div><h2>Al uw saldo's in één oogopslag</h2><p>Betaald verlof, ADV, opleiding, ziekte, overuren-opname… maak er zoveel als u wilt, in uw eigen kleuren. Elk saldo krijgt een duidelijke voortgangsbalk.</p></div></div>
+    <div class="row"><div class="emoji">⚡</div><div><h2>Overuren? Die rekent TimeOff zelf uit</h2><p>Geef gewoon aan wanneer u klaar was: TimeOff vergelijkt met uw uurrooster en doet de rest, pauze inbegrepen.</p></div></div>
+    <div class="row"><div class="emoji">🕒</div><div><h2>Uw uren, zoals u het wilt</h2><p>Per dag: begin, einde, pauze. Verandert uw rooster? Eén tik en alles is herberekend — voorgaande jaren blijven met rust.</p></div></div>
+    <div class="row"><div class="emoji">🎉</div><div><h2>Feestdagen? Daar zorgen wij voor</h2><p>Frankrijk, België, Nederland: zelfs Pasen en Hemelvaart worden automatisch berekend, en nooit van uw verlof afgetrokken.</p></div></div>
+    <div class="row"><div class="emoji">📝</div><div><h2>Elke afwezigheid netjes bewaard</h2><p>Datums, status, reden, duur… alles in een geschiedenis die u kunt filteren, wijzigen of ongedaan maken.</p></div></div>
+    <div class="row"><div class="emoji">📸</div><div><h2>Uw bewijsstukken, veilig weggestopt</h2><p>Een foto of bestand per afwezigheid, bewaard in een privéhoekje van de app — nooit in uw galerij.</p></div></div>
+    <div class="row"><div class="emoji">💾</div><div><h2>Nieuwe telefoon? Geen paniek</h2><p>Eén bestand, al uw gegevens. Exporteren, elders importeren, en alles staat er weer zoals voorheen.</p></div></div>
+    <div class="row"><div class="emoji">🗓</div><div><h2>Het jaareinde, zonder stress</h2><p>U archiveert en kiest zelf wat u meeneemt naar volgend jaar: resterende dagen, overuren in voorraad.</p></div></div>
+  </div>
+
+  <div class="privacy-box">
+    <h2>🔒 Uw gegevens blijven van u, punt uit</h2>
+    <p>Geen account, geen registratie, geen trackers die u volgen. Alles blijft op uw telefoon, de app werkt zelfs zonder internet. Alleen het nieuwspaginaatje van het team (uit te schakelen) gaat online, zonder ooit iets van uw gegevens te versturen. En als u wilt, vergrendelt een code, vingerafdruk of gezicht het geheel.<br><a href="index_privacy_link">Het privacybeleid, in gewone taal</a></p>
+  </div>
+
+  <div class="creator">
+    <h2>Een woordje van Salvo</h2>
+    <p>Hoi, ik ben Salvo ☀️ Ik maakte dit kleine app'je om mijn eigen verlof zonder stress bij te houden, en dacht: waarom zou ik er anderen niet ook van laten profiteren? Fijne vakantie!</p>
+    <small>TimeOff is een persoonlijk hulpmiddel: het vervangt niet de regels van uw werkgever of uw cao.</small>
+  </div>
+
+  <div class="cta">
+    <a href="index_guide_link">📖 Het gidsje</a>
+    <a class="secondary" href="index_privacy_link">🔒 Privacy</a>
+  </div>
+</div>
+
+<!-- ===================== ENGLISH ===================== -->
+<div data-l="en">
+  <section class="chat">
+    <h2>Hey, it's TimeOff 👋</h2>
+    <p>A leave tracker as easy as saying hi: enter your working hours once, and that's it — your balances, holidays and overtime work themselves out. No account, no ads, no fuss.</p>
+  </section>
+
+  <div class="beta-box">
+    <h2>🎉 You're testing the very first version!</h2>
+    <p>Thank you so much, it helps me a lot. Here's how it works:</p>
+    <ol>
+      <li>Open the test sign-up link I sent you, and join the test program.</li>
+      <li>Install TimeOff from the Play Store, like any normal app.</li>
+      <li>Use it for real over the next 14 days, if you can.</li>
+      <li>Found a bug, an opinion, an idea? Email me at <a href="mailto:salva.bldn@gmail.com">salva.bldn@gmail.com</a>.</li>
+    </ol>
+  </div>
+
+  <div class="stickers">
+    <span class="sticker">No account</span>
+    <span class="sticker alt1">No ads</span>
+    <span class="sticker alt2">Works offline</span>
+    <span class="sticker">Actually free</span>
+  </div>
+
+  <div class="stack">
+    <div class="row"><div class="emoji">🌴</div><div><h2>Every balance, at a glance</h2><p>Paid leave, comp days, training, sick days, overtime recovery… make as many as you like, in your own colours. Each balance gets a nice clear progress bar.</p></div></div>
+    <div class="row"><div class="emoji">⚡</div><div><h2>Overtime? TimeOff works it out for you</h2><p>Just say when you finished: TimeOff compares it with your schedule and does the maths, break included.</p></div></div>
+    <div class="row"><div class="emoji">🕒</div><div><h2>Your hours, your way</h2><p>Day by day: start, end, break. Schedule changes? One tap and it's all recalculated — past years never touched.</p></div></div>
+    <div class="row"><div class="emoji">🎉</div><div><h2>Public holidays? We've got it</h2><p>France, Belgium, the Netherlands: even Easter and Ascension are worked out automatically, and never taken from your leave.</p></div></div>
+    <div class="row"><div class="emoji">📝</div><div><h2>Every absence, neatly kept</h2><p>Dates, status, reason, duration… all in a history you can filter, edit or undo in one tap.</p></div></div>
+    <div class="row"><div class="emoji">📸</div><div><h2>Your proof, tucked away safely</h2><p>A photo or file per absence, kept in a private corner of the app — never in your gallery.</p></div></div>
+    <div class="row"><div class="emoji">💾</div><div><h2>New phone? No stress</h2><p>One file, all your data. Export it, import it elsewhere, and everything's back just as it was.</p></div></div>
+    <div class="row"><div class="emoji">🗓</div><div><h2>Year-end, the gentle way</h2><p>Archive the year and pick what carries over: remaining days, overtime in the bank.</p></div></div>
+  </div>
+
+  <div class="privacy-box">
+    <h2>🔒 Your data stays yours, full stop</h2>
+    <p>No account, no sign-up, no trackers following you around. Everything stays on your phone, the app even works without internet. Only the little team news page (can be switched off) goes online, and it never sends any of your data. And if you like, a PIN, fingerprint or face can lock it all up.<br><a href="index_privacy_link">The privacy policy, in plain words</a></p>
+  </div>
+
+  <div class="creator">
+    <h2>A word from Salvo</h2>
+    <p>Hi, I'm Salvo ☀️ I made this little app to track my own leave without the hassle, and figured — why not share it with everyone else too? Enjoy your time off!</p>
+    <small>TimeOff is a personal tool: it doesn't replace your employer's rules or your collective agreement.</small>
+  </div>
+
+  <div class="cta">
+    <a href="index_guide_link">📖 The little guide</a>
+    <a class="secondary" href="index_privacy_link">🔒 Privacy</a>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div data-l="fr">Fait avec ☀️ par <b>Salvo</b></div>
+  <div data-l="nl">Gemaakt met ☀️ door <b>Salvo</b></div>
+  <div data-l="en">Made with ☀️ by <b>Salvo</b></div>
+</footer>
+
+<script>
+  var langs = ['fr','nl','en'];
+  function setLang(l) {
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-l]').forEach(function (e) { e.classList.toggle('on', e.getAttribute('data-l') === l); });
+    document.querySelectorAll('[data-btn]').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-btn') === l); });
+    try { localStorage.setItem('timeoff-guide-lang', l); } catch (e) {}
+  }
+  document.querySelectorAll('[data-btn]').forEach(function (b) { b.addEventListener('click', function () { setLang(b.getAttribute('data-btn')); }); });
+  document.querySelectorAll('a[href="index_privacy_link"]').forEach(function (a) { a.setAttribute('href', 'https://salvabld.github.io/timeoff-privacy/'); });
+  document.querySelectorAll('a[href="index_guide_link"]').forEach(function (a) { a.setAttribute('href', 'https://salvabld.github.io/timeoff-privacy/guide/'); });
+  var saved = null; try { saved = localStorage.getItem('timeoff-guide-lang'); } catch (e) {}
+  var nav = (navigator.language || 'fr').slice(0, 2).toLowerCase();
+  setLang(saved || (langs.indexOf(nav) >= 0 ? nav : 'en'));
+</script>
+</body>
+</html>
