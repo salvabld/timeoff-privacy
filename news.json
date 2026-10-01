@@ -1,6 +1,21 @@
 {
   "items": [
     {
+      "id": "update-1.1-2026-10",
+      "date": "2026-10-01",
+      "popup": true,
+      "title": {
+        "fr": "Mise à jour 1.1 🎉",
+        "nl": "Update 1.1 🎉",
+        "en": "Update 1.1 🎉"
+      },
+      "body": {
+        "fr": "Merci pour vos retours ! Plusieurs bugs corrigés (actualités, clavier qui cachait des champs, sauvegarde automatique) et l'horaire/les pots de départ améliorés. Continuez à me dire ce qui cloche 🙏",
+        "nl": "Bedankt voor jullie feedback! Verschillende bugs opgelost (nieuws, toetsenbord dat velden verborg, automatisch opslaan) en het uurrooster/de startpotten verbeterd. Blijf gerust feedback geven 🙏",
+        "en": "Thanks for the feedback! Several bugs fixed (news, keyboard hiding fields, autosave) and the schedule/starter pots improved. Keep the feedback coming 🙏"
+      }
+    },
+    {
       "id": "welcome-2026-09",
       "date": "2026-09-20",
       "popup": true,
