@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "id": "public-1.2-2026-10",
+      "date": "2026-10-21",
+      "popup": true,
+      "title": {
+        "fr": "TimeOff est disponible pour tous 🎉",
+        "nl": "TimeOff is nu voor iedereen beschikbaar 🎉",
+        "en": "TimeOff is now available to everyone 🎉"
+      },
+      "body": {
+        "fr": "TimeOff est maintenant publié sur le Play Store, merci à tous les testeurs 🙏 Nouveautés de la version 1.2 : calendrier en couleurs avec idées de ponts, demi-journées, onglets en bas de l'écran, récapitulatif PDF, ajout dans l'agenda, congés de l'année suivante posés à l'avance et report de fin d'année. Elle corrige aussi un plantage sur Android 8 à 12. Le guide a été entièrement refait.",
+        "nl": "TimeOff staat nu in de Play Store, bedankt aan alle testers 🙏 Nieuw in versie 1.2: kalender in kleur met ideeën voor brugdagen, halve dagen, tabbladen onderaan het scherm, PDF-overzicht, toevoegen aan de agenda, verlof van volgend jaar vooraf plannen en overdracht op het jaareinde. Ze verhelpt ook een crash op Android 8 tot 12. De gids is volledig vernieuwd.",
+        "en": "TimeOff is now published on the Play Store, thank you to all the testers 🙏 New in version 1.2: colour calendar with long weekend ideas, half days, tabs at the bottom of the screen, PDF summary, add to your phone's calendar, next year's leave booked in advance and year-end carry-over. It also fixes a crash on Android 8 to 12. The guide has been fully rewritten."
+      },
+      "link": "https://salvabld.github.io/timeoff-privacy/guide/",
+      "linkLabel": {
+        "fr": "Ouvrir le guide",
+        "nl": "Gids openen",
+        "en": "Open the guide"
+      }
+    },
+    {
+      "id": "welcome-2026-09",
+      "date": "2026-09-20",
+      "popup": true,
+      "title": {
+        "fr": "Merci d'avoir installé TimeOff !",
+        "nl": "Bedankt voor het installeren van TimeOff!",
+        "en": "Thank you for installing TimeOff!"
+      },
+      "body": {
+        "fr": "L'équipe Salvo vous remercie de votre confiance. TimeOff est gratuit, sans publicité et respecte votre vie privée : vos données restent sur votre téléphone. Une question ? Le guide se trouve dans Administration (⚙), sous « Aide et informations ». Bonnes vacances !",
+        "nl": "Het Salvo-team bedankt u voor uw vertrouwen. TimeOff is gratis, zonder reclame en respecteert uw privacy: uw gegevens blijven op uw telefoon. Een vraag? De gids vindt u in Beheer (⚙), onder \"Hulp en informatie\". Fijne vakantie!",
+        "en": "The Salvo team thanks you for your trust. TimeOff is free, ad-free and respects your privacy: your data stays on your phone. Got a question? The guide is in Administration (⚙), under \"Help and information\". Enjoy your time off!"
+      },
+      "link": "https://salvabld.github.io/timeoff-privacy/guide/",
+      "linkLabel": {
+        "fr": "Ouvrir le guide",
+        "nl": "Gids openen",
+        "en": "Open the guide"
+      }
+    }
+  ]
+}
